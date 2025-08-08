@@ -2,23 +2,47 @@ const detailedProjects = [
   {
     id: 1,
     image: "itnt.png",
-    logo: "/it.png", //  Add a logo path here
+    logo: "/it.png",
     title: "iTNT HUB Website with an innovative user interface",
-    buttons: ["Html","Css", "Bootstrap", "JavaScript", "UI Testing","Frontend Developement"],
+    buttons: ["Html", "Css", "Bootstrap", "JavaScript", "UI Testing", "Frontend Developement"],
   },
   {
     id: 2,
     image: "vitti-living.png",
     logo: "/vilogo.png",
     title: "Vitti Living Website with innovative user interface",
-    buttons: ["Tailwind CSS","Html","Css", "JavaScript","Frontend Developement"],
+    buttons: ["Tailwind CSS", "Html", "Css", "JavaScript", "Frontend Developement"],
   },
   {
     id: 3,
     image: "speedexam.png",
     logo: "/speed.png",
     title: "Portfolio Site",
-    buttons: ["JavaScript","Bootstrap","Html","Tailwindcss","Frontend Developement"],
+    buttons: ["JavaScript", "Bootstrap", "Html", "Tailwindcss", "Frontend Developement"],
+  },
+  {
+    id: 4,
+    image: "healthcare-app.png",
+    logo: "/healthlogo.png",
+    title: "Google Studio Dashboard Clone",
+    buttons: ["React", "Tailwind CSS", "Responsive Design"],
+    link: "https://healthcare-dashboard.example.com",
+  },
+  {
+    id: 5,
+    image: "travel-site.png",
+    logo: "/travelogo.png",
+    title: "Food website Platform with Stunning UI",
+    buttons: ["Tailwind CSS", "Django", "Frontend Development"],
+    link: "https://travelplatform.example.com",
+  },
+  {
+    id: 6,
+    image: "ecommerce-app.png",
+    logo: "/ecomlogo.png",
+    title: "Portfolio website for professional showcase",
+    buttons: ["React", "Redux", "Styled Components", "Tailwindcss", "UI/UX"],
+    link: "https://ecommerce-app.example.com",
   },
 ];
 
@@ -31,34 +55,52 @@ function Projects() {
         color: "#fff",
       }}
     >
-     <h2
-  style={{
-    fontSize: "clamp(1.95rem, 5vw, 1.5rem)",
-    fontWeight: 600,
-    color: "#e5e5e5",
-    paddingBottom: "0.5rem",
-    marginBottom: "1rem",
-    textAlign: "center",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "0.6rem",
-    flexWrap: "wrap",
-    lineHeight: 1.9,
-  }}
->
-  <span>Projects I've Built & Contributed To – All Live</span>
-  <svg
-    width="24"
-    height="26"
-    viewBox="0 0 24 24"
-    fill="#ffffff"
-    style={{ marginTop: "2px" }}
-  >
-    <path d="M13 2L3 14h9l-1 8L21 10h-9l1-8z" />
-  </svg>
-</h2>
+      {/* 🚧 Billboard notice */}
+      <div
+        style={{
+          backgroundColor: "#1a1a1a",
+          color: "#00ff00",
+          padding: "0.75rem 1rem",
+          textAlign: "center",
+          fontWeight: 600,
+          fontSize: "1.1rem",
+          letterSpacing: "0.05em",
+          borderRadius: "8px",
+          marginBottom: "2rem",
+          boxShadow: "0 0 10px rgba(255, 165, 0, 0.9)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "0.5rem",
+          animation: "pulseGlow 2s infinite",
+        }}
+      >
+        <span role="img" aria-label="work">🚧</span>
+        <span>This Projects Page is Under Active Development</span>
+        <span role="img" aria-label="gear">🛠️</span>
+      </div>
 
+      <h2
+        style={{
+          fontSize: "clamp(1.95rem, 5vw, 1.5rem)",
+          fontWeight: 600,
+          color: "#e5e5e5",
+          paddingBottom: "0.5rem",
+          marginBottom: "1rem",
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "0.6rem",
+          flexWrap: "wrap",
+          lineHeight: 1.9,
+        }}
+      >
+        <span>Projects I've Built & Contributed To – All Live</span>
+        <svg width="24" height="26" viewBox="0 0 24 24" fill="#ffffff" style={{ marginTop: "2px" }}>
+          <path d="M13 2L3 14h9l-1 8L21 10h-9l1-8z" />
+        </svg>
+      </h2>
 
       <div
         style={{
@@ -103,19 +145,19 @@ function Projects() {
                   gap: "0.5rem",
                 }}
               >
-                 <img
-            src={project.logo}
-            alt="Logo"
-            style={{
-              width: "auto",           
-              height: "48px",           
-              maxWidth: "100px",         
-              objectFit: "contain",       // Prevents distortion
-              borderRadius: "8px",
-              backgroundColor: "#1a1a1a", // Optional: makes transparent logos look cleaner
-              padding: "4px",             // Optional: adds spacing if logo has no margin
-            }}
-          />
+                <img
+                  src={project.logo}
+                  alt="Logo"
+                  style={{
+                    width: "auto",
+                    height: "48px",
+                    maxWidth: "100px",
+                    objectFit: "contain",
+                    borderRadius: "8px",
+                    backgroundColor: "#1a1a1a",
+                    padding: "4px",
+                  }}
+                />
                 <h3
                   style={{
                     fontSize: "1.9rem",
@@ -182,23 +224,6 @@ function Projects() {
                 zIndex: 1,
               }}
             >
-              {/* Triangle background */}
-              <img
-                src="/"
-                alt="Decorative background"
-                style={{
-                  position: "absolute",
-                  bottom: "0px",
-                  right: "10px",
-                  width: "100%",
-                  height: "auto",
-                  opacity: 1,
-                  pointerEvents: "none",
-                  zIndex: 1,
-                }}
-              />
-
-              {/* Live Project Link Image */}
               <div style={{ position: "relative", borderRadius: "12px", overflow: "hidden" }}>
                 <a
                   href={project.link}
@@ -223,8 +248,6 @@ function Projects() {
                     onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.02)")}
                     onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
                   />
-
-                  {/* Overlay Badge */}
                   <span
                     className="live-label"
                     style={{
@@ -253,6 +276,19 @@ function Projects() {
       {/* Responsive & Hover Styles */}
       <style>
         {`
+          @keyframes pulseGlow {
+            0% {
+              box-shadow: 0 0 10px rgba(255, 165, 0, 0.2);
+            }
+            50% {
+              box-shadow: 0 0 20px rgba(255, 165, 0, 0.4);
+            }
+            100% {
+              box-shadow: 0 0 10px rgba(255, 165, 0, 0.2);
+            }
+          }  /* bill board */
+
+
           a:hover .live-label {
             opacity: 1 !important;
           }

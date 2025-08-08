@@ -854,11 +854,21 @@ const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-        <img src="/" alt="Code" width="20" height="20" />
-        <span style={{ fontSize: "0.85rem" }}>10+ Projects</span>
+<img
+  src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png"
+  alt="Projects"
+  width="20"
+  height="20"
+/>
+        <span style={{ fontSize: "0.85rem" }}>3+ Projects</span>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-        <img src="/ai-icon.svg" alt="AI" width="20" height="20" />
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png"
+        alt="AI Face Logo"
+        width={24}
+        height={24}
+      />
         <span style={{ fontSize: "0.85rem" }}>AI UI Systems</span>
       </div>
     </div>
@@ -1025,15 +1035,18 @@ const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
     {[...Array(2)].flatMap(() =>
       [
         { name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Tailwind CSS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+        {name: "Tailwind CSS",img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"},
         { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
         { name: "TypeScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
         { name: "Redux", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
         { name: "Vite", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" },
         { name: "Git", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
         { name: "Figma", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-        { name: "Jest", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" },
-        { name: "Next.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+        {name: "HTML5",img: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"},
+        {name: "CSS3",img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"},
+        {name: "Microsoft Excel",img: "https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg"},
+        // { name: "Jest", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" },
+        // { name: "Next.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
       ].map((skill, index) => (
         <img
           key={`${skill.name}-${index}`}

@@ -3,36 +3,43 @@ import { useEffect, useRef } from "react";
 function About() {
   const skills = [
     { name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { name: "Tailwind CSS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+    {name: "Tailwind CSS",img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"},
     { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
     { name: "TypeScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
     { name: "Redux", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
     { name: "Vite", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" },
     { name: "Git", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
     { name: "Figma", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-    { name: "Jest", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" },
-    { name: "Next.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" }
+    {name: "HTML5",img: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"},
+    {name: "CSS3",img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"},
+    {name: "Microsoft Excel",img: "https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg"},
+    // { name: "Jest", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" },
+    // { name: "Next.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" }
   ];
 
-  const scrollRef = useRef(null);
+ const scrollRef = useRef(null);
 
-  useEffect(() => {
-    const el = scrollRef.current;
-    let animationFrame;
+useEffect(() => {
+  const el = scrollRef.current;
+  let animationFrame;
 
-    const scroll = () => {
-      if (el) {
-        el.scrollLeft += 1;
-        if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
-          el.scrollLeft = 0;
-        }
+  const scroll = () => {
+    if (el) {
+      el.scrollLeft += 1;
+
+      // Reset when halfway to create seamless scroll
+      if (el.scrollLeft >= el.scrollWidth / 2) {
+        el.scrollLeft = 0;
       }
-      animationFrame = requestAnimationFrame(scroll);
-    };
-
+    }
     animationFrame = requestAnimationFrame(scroll);
-    return () => cancelAnimationFrame(animationFrame);
-  }, []);
+  };
+
+  animationFrame = requestAnimationFrame(scroll);
+
+  return () => cancelAnimationFrame(animationFrame);
+}, []);
+
 
   return (
     <section className="min-h-screen bg-black text-white p-4 pt-16 sm:p-6 max-w-7xl mx-auto space-y-10">
@@ -98,25 +105,27 @@ function About() {
               <p className="text-gray-400 mt-1 text-sm">Years of Work Experience</p>
             </div>
             <div className="flex-1 p-6 bg-white/10 backdrop-blur-md rounded-xl shadow text-left">
-              <h4 className="text-3xl font-bold text-white">5+</h4>
+              <h4 className="text-3xl font-bold text-white">3+</h4>
               <p className="text-gray-400 mt-1 text-sm">Projects Contribution</p>
             </div>
           </div>
 
           {/* Skills */}
-         <div ref={scrollRef}
-              className="flex gap-4 overflow-x-scroll whitespace-nowrap scroll-smooth [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
-            >
-              {skills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center justify-center px-4 py-2 rounded-lg min-w-max"
-                >
-                  <img src={skill.img} alt={skill.name} className="h-8 w-8 mb-1" />
-                  <span className="text-xs text-white">{skill.name}</span>
-                </div>
-              ))}
-            </div>
+        <div ref={scrollRef}
+            className="flex gap-4 overflow-x-scroll whitespace-nowrap scroll-smooth [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
+          >
+            {/* Duplicate the skills content once to enable seamless loop */}
+            {[...skills, ...skills].map((skill, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center px-4 py-2 rounded-lg min-w-max"
+              >
+                <img src={skill.img} alt={skill.name} className="h-8 w-8 mb-1" />
+                <span className="text-xs text-white">{skill.name}</span>
+              </div>
+            ))}
+          </div>
+
 
         </div>
 
@@ -125,9 +134,9 @@ function About() {
           <h3 className="text-xl font-semibold text-gray-300 mb-4 text-left">Industry & Domain Knowledge</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-gray-400">
             {[
-              "Pharma", "SAAS", "Education", "IT", "Behavioral Science", "AI", "Real Estate",
-              "E-Commerce", "Beauty", "Fashion", "FMCG", "Digital Marketing",
-              "CMS", "Marketing", "And many more"
+             "Responsive Design", "Web Accessibility", "UI/UX", "Git & GitHub", "REST APIs", "State Management", 
+             "Version Control","Figma to Code", "API Integration","Testing", "Performance Optimization",
+             "CI/CD", "Browser Compatibility", "Soft Skills", "Agile & Scrum", "Deployment", "And many more"
             ].map((item, index) => (
               <span
                 key={index}
