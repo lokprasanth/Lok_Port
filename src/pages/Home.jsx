@@ -893,8 +893,8 @@ const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
       <div
         style={{
           width: "100%",
-          height: "250px",
-          backgroundImage: "url('/lp.png')",
+          height: "298px",
+          backgroundImage: "url('/pic1.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           borderRadius: "0.75rem",
@@ -903,14 +903,14 @@ const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
         }}
       >
         <img
-          src="/lp.png"
+          src="/pic2.jpeg"
           alt="Profile"
           style={{
             position: "absolute",
             bottom: "-36px",
             left: "50%",
             transform: "translateX(-50%)",
-            width: "72px",
+            width: "74px",
             height: "72px",
             objectFit: "cover",
             borderRadius: "50%",

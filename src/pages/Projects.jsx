@@ -22,7 +22,7 @@ const detailedProjects = [
   },
   {
     id: 4,
-    image: "healthcare-app.png",
+    image: "card8.png",
     logo: "/healthlogo.png",
     title: "Google Studio Dashboard Clone",
     buttons: ["React", "Tailwind CSS", "Responsive Design"],
@@ -30,7 +30,7 @@ const detailedProjects = [
   },
   {
     id: 5,
-    image: "travel-site.png",
+    image: "card4.png",
     logo: "/travelogo.png",
     title: "Food website Platform with Stunning UI",
     buttons: ["Tailwind CSS", "Django", "Frontend Development"],
@@ -38,9 +38,17 @@ const detailedProjects = [
   },
   {
     id: 6,
-    image: "ecommerce-app.png",
+    image: "card2.png",
     logo: "/ecomlogo.png",
-    title: "Portfolio website for professional showcase",
+    title: "Google Studio website for professional showcase",
+    buttons: ["React", "Redux", "Styled Components", "Tailwindcss", "UI/UX"],
+    link: "https://ecommerce-app.example.com",
+  },
+  {
+    id: 7,
+    image: "card6.png",
+    logo: "/ecomlogo.png",
+    title: "Ecommerce website for professional",
     buttons: ["React", "Redux", "Styled Components", "Tailwindcss", "UI/UX"],
     link: "https://ecommerce-app.example.com",
   },
