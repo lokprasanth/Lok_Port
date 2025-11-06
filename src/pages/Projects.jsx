@@ -38,11 +38,16 @@ const detailedProjects = [
   },
   {
     id: 6,
-    image: "card2.png",
-    logo: "/ecomlogo.png",
-    title: "Google Studio website for professional showcase",
+    title: "SpeedExam",
+    logo: "/logos/speedexam.png",
+    image: "card4.png",
+    link: "https://speedexam.com",
     buttons: ["React", "Redux", "Styled Components", "Tailwindcss", "UI/UX"],
-    link: "https://ecommerce-app.example.com",
+    tools: "React.js, Tailwind CSS, Firebase, REST API, Netlify",
+    responsibilities:
+      "Developed responsive UI components, optimized load speed, implemented dynamic question rendering and authentication flows.",
+    purpose:
+      "An online examination platform enabling timed tests, instant scoring, and real-time analytics for institutions and students.",
   },
   {
     id: 7,
@@ -63,30 +68,7 @@ function Projects() {
         color: "#fff",
       }}
     >
-      {/* 🚧 Billboard notice */}
-      <div
-        style={{
-          backgroundColor: "#1a1a1a",
-          color: "#00ff00",
-          padding: "0.75rem 1rem",
-          textAlign: "center",
-          fontWeight: 600,
-          fontSize: "1.1rem",
-          letterSpacing: "0.05em",
-          borderRadius: "8px",
-          marginBottom: "2rem",
-          boxShadow: "0 0 10px rgba(255, 165, 0, 0.9)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "0.5rem",
-          animation: "pulseGlow 2s infinite",
-        }}
-      >
-        <span role="img" aria-label="work">🚧</span>
-        <span>This Projects Page is Under Active Development</span>
-        <span role="img" aria-label="gear">🛠️</span>
-      </div>
+     
 
       <h2
         style={{
@@ -277,9 +259,83 @@ function Projects() {
                 </a>
               </div>
             </div>
+
+            {/* Extra Project Details Section */}
+<div
+  style={{
+    width: "100%",
+    backgroundColor: "#0d0d0d",
+    borderTop: "1px solid #1f1f1f",
+    borderRadius: "0 0 20px 20px",
+    padding: "1.5rem 2rem",
+    marginTop: "-2rem",
+    zIndex: 0,
+  }}
+>
+  <h4
+    style={{
+      color: "#f5f5f5",
+      fontSize: "1.2rem",
+      marginBottom: "0.5rem",
+      fontWeight: 500,
+    }}
+  >
+    Tools Used:
+  </h4>
+  <p
+    style={{
+      color: "#bdbdbd",
+      lineHeight: 1.6,
+      marginBottom: "1.2rem",
+    }}
+  >
+    {project.tools}
+  </p>
+
+  <h4
+    style={{
+      color: "#f5f5f5",
+      fontSize: "1.2rem",
+      marginBottom: "0.5rem",
+      fontWeight: 500,
+    }}
+  >
+    Key Responsibilities:
+  </h4>
+  <p
+    style={{
+      color: "#bdbdbd",
+      lineHeight: 1.6,
+      marginBottom: "1.2rem",
+    }}
+  >
+    {project.responsibilities}
+  </p>
+
+  <h4
+    style={{
+      color: "#f5f5f5",
+      fontSize: "1.2rem",
+      marginBottom: "0.5rem",
+      fontWeight: 500,
+    }}
+  >
+    Purpose of This Project:
+  </h4>
+  <p
+    style={{
+      color: "#bdbdbd",
+      lineHeight: 1.6,
+    }}
+  >
+    {project.purpose}
+  </p>
+</div>
+
           </div>
         ))}
       </div>
+      
 
       {/* Responsive & Hover Styles */}
       <style>

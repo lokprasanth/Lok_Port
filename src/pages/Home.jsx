@@ -29,6 +29,7 @@ const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
   }, []);
 
   return (
+    
     <main
       style={{
         fontFamily: "Segoe UI, sans-serif",
@@ -37,6 +38,7 @@ const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
         overflowX: "hidden",
       }}
     >
+      
       {/* Hero Section */}
   <section
   style={{
@@ -52,6 +54,31 @@ const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
     overflow: "hidden",
   }}
 >
+
+        {/* 🚧 Billboard notice */}
+
+   <div
+        style={{
+          backgroundColor: "#1a1a1a",
+          color: "#00ff00",
+          padding: "0.75rem 1rem",
+          textAlign: "center",
+          fontWeight: 600,
+          fontSize: "1.1rem",
+          letterSpacing: "0.05em",
+          marginBottom: "2rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "0.5rem",
+        }}
+      >
+        <span role="img" aria-label="work">🚧</span>
+        <span>Portfolio is Under Development</span>
+        <span role="img" aria-label="gear">🛠️</span>
+      </div>
+
+
   {/* Wave Background - bottom layer */}
   <div
     style={{
@@ -331,8 +358,45 @@ const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
   
 </section>
 
+      {/* Scrolling Banner */}
+ <div
+  style={{
+    position: "relative",
+    width: "100%", // full width
+    height: "30px",
+    overflow: "hidden",
+    borderRadius: "6px",
+    border: "1px solid rgba(255,255,255,0.2)",
+    background: "rgba(255,255,255,0.05)",
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      whiteSpace: "nowrap",
+      color: "#fff",
+      fontSize: "1rem",
+      fontWeight: "500",
+      letterSpacing: "1px",
+      animation: "slideBanner 10s linear infinite",
+    }}
+  >
+    ⚡ Powering Creative Interfaces ⚡ — ⚡ Powering Creative Interfaces ⚡ — ⚡ Powering Creative Interfaces ⚡
+  </div>
 
-      {/* Additional Sections  */}
+  <style>
+    {`
+      @keyframes slideBanner {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+      }
+    `}
+  </style>
+</div>
+
+
+
+      {/* Project Sections  */}
 <section
   style={{
     padding: "4rem 5%",
@@ -340,37 +404,24 @@ const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
     color: "#fff",
   }}
 >
- <h2
-  style={{
-    fontSize: "clamp(1.95rem, 5vw, 2.75rem)", // Responsive font size
-    fontWeight: 600,
-    color: "#e5e5e5",
-    paddingBottom: "0.5rem",
-    marginBottom: "1rem",
-    textAlign: "center",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "0.75rem",
-    flexWrap: "wrap",
-    lineHeight: 1.2,
-  }}
->
-  <span>Live</span>  <span>Projects</span>
-
-  {/* <img
-    src="/Triangle Flow.gif"
-    alt="Divider"
+  <h2
     style={{
-      width: "clamp(58px, 10vw, 100px)", // Responsive image width
-      height: "auto",
-      objectFit: "contain",
-      filter: "brightness(0.8)",
+      fontSize: "clamp(1.95rem, 5vw, 2.75rem)",
+      fontWeight: 600,
+      color: "#e5e5e5",
+      paddingBottom: "0.5rem",
+      marginBottom: "1rem",
+      textAlign: "center",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "0.75rem",
+      flexWrap: "wrap",
+      lineHeight: 1.2,
     }}
-  /> */}
-</h2>
-
-
+  >
+    <span>Projects</span>
+  </h2>
 
   <div
     style={{
@@ -380,48 +431,67 @@ const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
     }}
   >
     {[
-  {
-    id: 1,
-    image: "itnt.png",
-    logo: "/it.png", //  Add a logo path here
-    title: "iTNT HUB Website with an innovative user interface",
-    buttons: ["Html","Css", "Bootstrap", "JavaScript", "UI Testing","Frontend Developement"],
-  },
-  {
-    id: 2,
-    image: "vitti-living.png",
-    logo: "/vilogo.png",
-    title: "Vitti Living Website with innovative user interface",
-    buttons: ["Tailwind CSS","Html","Css", "JavaScript","Frontend Developement"],
-  },
-  {
-    id: 3,
-    image: "speedexam.png",
-    logo: "/speed.png",
-    title: "Portfolio Site",
-    buttons: ["JavaScript","Bootstrap","Html","Tailwindcss","Frontend Developement"],
-  },
-]
-
-.map((project) => (
- <div
-  key={project.id}
-  className="project-container"
-  style={{
-    position: "relative",
-    display: "flex",
-    backgroundColor: "#141414",
-    borderRadius: "20px",
-    overflow: "hidden",
-    marginBottom: "3rem",
-    padding: "2rem",
-    minHeight: "400px",
-    justifyContent: "space-between",
-    gap: "2rem",
-    flexWrap: "wrap",
-  }}
->
-
+      {
+        id: 1,
+        image: "itnt.png",
+        logo: "/it.png",
+        title: "iTNT HUB Website with an innovative user interface",
+        buttons: [
+          "Html",
+          "Css",
+          "Bootstrap",
+          "JavaScript",
+          "UI Testing",
+          "Frontend Developement",
+        ],
+        liveLink: "https://itnthub.com", // Add your actual live demo link
+      },
+      {
+        id: 2,
+        image: "vitti-living.png",
+        logo: "/vilogo.png",
+        title: "Vitti Living Website with innovative user interface",
+        buttons: [
+          "Tailwind CSS",
+          "Html",
+          "Css",
+          "JavaScript",
+          "Frontend Developement",
+        ],
+        liveLink: "https://vittiliving.com", // Example link
+      },
+      {
+        id: 3,
+        image: "speedexam.png",
+        logo: "/speed.png",
+        title: "Portfolio Site",
+        buttons: [
+          "JavaScript",
+          "Bootstrap",
+          "Html",
+          "Tailwindcss",
+          "Frontend Developement",
+        ],
+        liveLink: "https://yourportfolio.com", // Example link
+      },
+    ].map((project) => (
+      <div
+        key={project.id}
+        className="project-container"
+        style={{
+          position: "relative",
+          display: "flex",
+          backgroundColor: "#141414",
+          borderRadius: "20px",
+          overflow: "hidden",
+          marginBottom: "3rem",
+          padding: "2rem",
+          minHeight: "400px",
+          justifyContent: "space-between",
+          gap: "2rem",
+          flexWrap: "wrap",
+        }}
+      >
         {/* Left Column */}
         <div
           style={{
@@ -434,119 +504,163 @@ const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
           }}
         >
           {/* Logo + Title */}
-         <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "0.5rem" }}>
-          <img
-            src={project.logo}
-            alt="Logo"
+          <div
             style={{
-              width: "auto",           
-              height: "48px",           
-              maxWidth: "100px",         
-              objectFit: "contain",       // Prevents distortion
-              borderRadius: "8px",
-              backgroundColor: "#1a1a1a", // Optional: makes transparent logos look cleaner
-              padding: "4px",             // Optional: adds spacing if logo has no margin
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: "0.5rem",
             }}
-          />
+          >
+            <img
+              src={project.logo}
+              alt="Logo"
+              style={{
+                width: "auto",
+                height: "48px",
+                maxWidth: "100px",
+                objectFit: "contain",
+                borderRadius: "8px",
+                backgroundColor: "#1a1a1a",
+                padding: "4px",
+              }}
+            />
 
-          <h3 style={{ fontSize: "1.9rem", margin: 0, fontFamily: "Poppins, sans-serif", fontWeight: 300 }}>
-            <span style={{ color: "#6c6c6c" }}>
-              {project.title.slice(0, Math.floor(project.title.length / 2))}
-            </span>
-            <span style={{ color: "#fff" }}>
-              {project.title.slice(Math.floor(project.title.length / 2))}
-            </span>
-          </h3>
+            <h3
+              style={{
+                fontSize: "1.9rem",
+                margin: 0,
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: 300,
+              }}
+            >
+              <span style={{ color: "#6c6c6c" }}>
+                {project.title.slice(0, Math.floor(project.title.length / 2))}
+              </span>
+              <span style={{ color: "#fff" }}>
+                {project.title.slice(Math.floor(project.title.length / 2))}
+              </span>
+            </h3>
+          </div>
+
+          {/* Tech Buttons */}
+          <div
+            className="button-row project-buttons"
+            style={{
+              display: "flex",
+              gap: "1rem",
+              marginTop: "auto",
+              flexWrap: "wrap",
+            }}
+          >
+            {project.buttons.map((btn, i) => (
+              <button
+                key={i}
+                style={{
+                  padding: "0.4rem 1rem",
+                  backgroundColor: "#1b1b1b",
+                  color: "#616161",
+                  border: "2px solid #5b5b5b",
+                  borderRadius: "999px",
+                  cursor: "pointer",
+                  fontSize: "1rem",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.color = "#fff";
+                  e.currentTarget.style.borderColor = "#fff";
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.color = "#616161";
+                  e.currentTarget.style.borderColor = "#5b5b5b";
+                }}
+              >
+                {btn}
+              </button>
+            ))}
+          </div>
         </div>
 
- {/* Buttons */}
-<div className="button-row project-buttons" style={{ display: "flex", gap: "1rem", marginTop: "auto", flexWrap: "wrap" }}>
-  {project.buttons.map((btn, i) => (
-    <button
-      key={i}
-      style={{
-        padding: "0.4rem 1rem",
-        backgroundColor: "#1b1b1b",
-        color: "#616161",
-        border: "2px solid #5b5b5b",
-        borderRadius: "999px",
-        cursor: "pointer",
-        fontSize: "1rem",
-        transition: "all 0.3s ease",
-      }}
-      onMouseOver={(e) => {
-        e.currentTarget.style.color = "#fff";
-        e.currentTarget.style.borderColor = "#fff";
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.color = "#616161";
-        e.currentTarget.style.borderColor = "#5b5b5b";
-      }}
-    >
-      {btn}
-    </button>
-  ))}
-</div>
-
- </div>
-
-        {/* Right: Project Image Wrapper */}
+        {/* Right Column (Image + Buttons) */}
         <div
           style={{
             flex: "0 0 auto",
             position: "relative",
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             zIndex: 1,
+            gap: "1rem",
           }}
         >
-          {/* Mat Background Behind Image */}
-          {/* <img
-            src="/.gif"
-            alt="Decorative background"
+          {/* Project Image */}
+          <img
+            src={project.image}
+            alt={`Project ${project.id}`}
             style={{
-              position: "absolute",
-              bottom: "0px",
-              right: "10px",
-              width: "100%",
+              width: "600px",
               height: "auto",
-              opacity: 1,
-              pointerEvents: "none",
-              zIndex: 1,
+              objectFit: "cover",
+              borderRadius: "12px",
+              cursor: "default",
             }}
-          /> */}
+          />
 
- {/* Main Project Image */}
- <a
-  href="/projects"
-  style={{
-    position: "relative",
-    zIndex: 2,
-    borderRadius: "12px",
-    overflow: "hidden",
-    display: "inline-block",
-  }}
->
-  <img
-    src={project.image}
-    alt={`Project ${project.id}`}
-    style={{
-      width: "600px",
-      height: "auto",
-      objectFit: "cover",
-      borderRadius: "12px",
-      cursor: "pointer",
-    }}
-  />
-</a>
+          {/* Buttons Below Image */}
+          <div style={{ display: "flex", gap: "1rem" }}>
+            <button
+              onClick={() => window.open(project.liveLink, "_blank")}
+              style={{
+                padding: "0.6rem 1.5rem",
+                backgroundColor: "#111",
+                color: "#fff",
+                border: "2px solid #fff",
+                borderRadius: "8px",
+                fontSize: "1rem",
+                cursor: "pointer",
+                transition: "0.3s ease",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.backgroundColor = "#fff";
+                e.currentTarget.style.color = "#000";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.backgroundColor = "#111";
+                e.currentTarget.style.color = "#fff";
+              }}
+            >
+              Live Demo
+            </button>
 
-
+            <button
+              onClick={() => (window.location.href = "/projects")}
+              style={{
+                padding: "0.6rem 1.5rem",
+                backgroundColor: "transparent",
+                color: "#fff",
+                border: "2px solid #666",
+                borderRadius: "8px",
+                fontSize: "1rem",
+                cursor: "pointer",
+                transition: "0.3s ease",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.borderColor = "#fff";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.borderColor = "#666";
+              }}
+            >
+              View Details
+            </button>
+          </div>
         </div>
       </div>
     ))}
   </div>
 </section>
+
 <style>
 {`
   @media (max-width: 1024px) {
@@ -606,7 +720,7 @@ const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
 `}
 </style>
 
-       {/* curosel slide Section */}
+      {/* Featured Section */}
 <section
   style={{
     position: "relative",
