@@ -5,20 +5,32 @@ const detailedProjects = [
     logo: "/it.png",
     title: "iTNT HUB Website with an innovative user interface",
     buttons: ["Html", "Css", "Bootstrap", "JavaScript", "UI Testing", "Frontend Developement"],
+    tools: "HTML5, CSS3, Bootstrap 5, JavaScript, REST API, GitHub",
+responsibilities: "Contributed to the creation of responsive web pages and comprehensive project documentation as part of a collaborative team, integrated RESTful APIs for dynamic content, ensured cross-browser compatibility, and optimized front-end components for improved performance.",
+purpose: "iTNT is an innovation hub established by the Tamil Nadu government to catalyze a deep‑tech and emerging-tech ecosystem by supporting startups, researchers, and academia. It fosters R&D, industry‑academia collaboration, and global partnerships to scale groundbreaking technologies.."
+
   },
   {
     id: 2,
-    image: "vitti-living.png",
+    image: "vitti.png",
     logo: "/vilogo.png",
     title: "Vitti Living Website with innovative user interface",
     buttons: ["Tailwind CSS", "Html", "Css", "JavaScript", "Frontend Developement"],
+    tools: "HTML5, CSS3, Bootstrap 5, JavaScript, REST API, GitHub",
+responsibilities: "Contributed to building responsive web pages, integrated dynamic content through APIs, ensured cross-browser compatibility, and assisted in maintaining project documentation as part of a collaborative team.",
+purpose: "A home-furniture brand creating handcrafted, sustainable, and timeless pieces that blend utility with refined design, supporting mindful consumption and long-lasting living."
+
   },
   {
     id: 3,
     image: "speedexam.png",
     logo: "/speed.png",
-    title: "Portfolio Site",
+    title: "Speedexam",
     buttons: ["JavaScript", "Bootstrap", "Html", "Tailwindcss", "Frontend Developement"],
+    tools: "HTML5, CSS3, Bootstrap 5, JavaScript, REST API, GitHub",
+responsibilities: "Contributed to the development of responsive exam interfaces, implemented dynamic question rendering, integrated RESTful APIs for real-time scoring, and assisted in maintaining project documentation as part of a collaborative team.",
+purpose: "An online examination platform designed to facilitate timed tests, instant scoring, and performance analytics, providing students and institutions with an efficient and interactive assessment experience."
+
   },
   {
     id: 4,
@@ -27,6 +39,10 @@ const detailedProjects = [
     title: "Google Studio Dashboard Clone",
     buttons: ["React", "Tailwind CSS", "Responsive Design"],
     link: "https://healthcare-dashboard.example.com",
+    tools: "HTML5, CSS3, React.js, JavaScript, REST API, GitHub",
+responsibilities: "Contributed to building responsive dashboard interfaces, implemented interactive charts and widgets, integrated APIs for dynamic data visualization, and assisted in project documentation within a collaborative team environment.",
+purpose: "A web-based dashboard clone of Google Studio, designed to provide users with interactive data visualization, real-time analytics, and intuitive navigation for monitoring key metrics effectively."
+
   },
   {
     id: 5,
@@ -38,11 +54,11 @@ const detailedProjects = [
   },
   {
     id: 6,
-    title: "SpeedExam",
+    title: "Port website",
     logo: "/logos/speedexam.png",
-    image: "card4.png",
+    image: "card7.png",
     link: "https://speedexam.com",
-    buttons: ["React", "Redux", "Styled Components", "Tailwindcss", "UI/UX"],
+    buttons: ["React", "Redux","Three.js", "Styled Components", "Tailwindcss", "UI/UX"],
     tools: "React.js, Tailwind CSS, Firebase, REST API, Netlify",
     responsibilities:
       "Developed responsive UI components, optimized load speed, implemented dynamic question rendering and authentication flows.",
@@ -86,7 +102,7 @@ function Projects() {
           lineHeight: 1.9,
         }}
       >
-        <span>Projects I've Built & Contributed To – All Live</span>
+        <span>Demonstrated Expertise Through Live, Collaborative Projects</span>
         <svg width="24" height="26" viewBox="0 0 24 24" fill="#ffffff" style={{ marginTop: "2px" }}>
           <path d="M13 2L3 14h9l-1 8L21 10h-9l1-8z" />
         </svg>
@@ -264,7 +280,7 @@ function Projects() {
 <div
   style={{
     width: "100%",
-    backgroundColor: "#0d0d0d",
+    backgroundColor: "",
     borderTop: "1px solid #1f1f1f",
     borderRadius: "0 0 20px 20px",
     padding: "1.5rem 2rem",

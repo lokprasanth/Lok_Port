@@ -132,8 +132,9 @@ useEffect(() => {
   const certificates = [
     { img: "/cert1.png", title: "FullStack" },
     { img: "/cert2.png", title: "Marketing" },
-    { img: "/cert1.png", title: "Pythonpro" },
-    { img: "/cert2.png", title: "ms-Excel" },
+    { img: "/cert4.png", title: "Data Analyst" },
+    { img: "/cert5.png", title: "Excel" },
+    { img: "/cert6.png", title: "Python" },
 
   ];
 
@@ -639,7 +640,7 @@ useEffect(() => {
     e.target.style.boxShadow =
       "0 4px 20px rgba(255,255,255,0.2) inset, 0 6px 20px rgba(0,0,0,0.3)";
   }}
-  onClick={() => (window.location.href = "/about")}
+onClick={() => window.location.assign("/about")}
 >
   {/* Gloss Highlight */}
   <span
@@ -823,7 +824,7 @@ useEffect(() => {
       {/* Project Sections */}
  <section
  style={{
-    padding: "6rem 5%",
+    padding: "7rem 5%",
     backgroundColor: "#000",
     // backgroundImage: "url('/light.png')",
     backgroundSize: "cover",        // REQUIRED for mobile
@@ -870,7 +871,7 @@ useEffect(() => {
     const inner = e.currentTarget.querySelector(".inner-scale");
     const arrow = e.currentTarget.querySelector(".box-arrow");
 
-    inner.style.transform = "scale(1.15)"; // ⭐ Separate hover zoom
+    inner.style.transform = "scale(1.15)"; // Separate hover zoom
     arrow.style.transform = "translateX(6px)"; // move forward
     arrow.style.background = "rgba(0,0,0,0.8)"; // darker
   }}
@@ -894,7 +895,7 @@ useEffect(() => {
   }}
 >
 
-          {/* ⭐ NEW inner wrapper for proper scaling */}
+          {/* NEW inner wrapper for proper scaling */}
           <div
             className="inner-scale"
             style={{
@@ -917,7 +918,7 @@ useEffect(() => {
                 objectFit: "cover",
               }}
             />
-              {/* ⭐ OVERLAY BUTTON (FRONT OF IMAGE) */}
+              {/* OVERLAY BUTTON (FRONT OF IMAGE) */}
  
           </div>
  <a
@@ -998,69 +999,75 @@ useEffect(() => {
   </div>
 
   {/* Controls */}
-  <div
+ <div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: "4rem",
+    gap: "1rem",
+  }}
+>
+  {/* Previous Button */}
+  <button
+    id="prev"
     style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      marginBottom: "4rem",
-      gap: "1rem",
-      
+      padding: "0.8rem 1.6rem",
+      color: "#fff",
+      cursor: "pointer",
+      borderRadius: "8px",
+      backgroundColor: "#1b1b1b",
+      border: "none",
+      transform: "rotate(180deg)", // fixed rotation
+      fontSize: "1.2rem",
     }}
   >
-    <button
-      id="prev"
-      style={{
-        padding: "0.8rem 1.6rem",
-        color: "#fff",
-        cursor: "pointer",
-          borderRadius: "20%",
-          backgroundColor: "#1b1b1b",
-          border: "none",
-        
-      }}
-    >
-      ◀    
-    </button>
+    ➜
+  </button>
 
+  {/* Progress Bar */}
+  <div
+    style={{
+      flex: 1,
+      height: "6px",
+      background: "#555",
+      position: "relative",
+      borderRadius: "3px",
+      overflow: "hidden",
+    }}
+  >
     <div
+      id="indicator"
       style={{
-        flex: 1,
-        height: "6px",
-        background: "#555",
-        position: "relative",
+        height: "100%",
+        background: "#fff",
+        width: "9.33%",
+        position: "absolute",
+        left: 0,
+        top: 0,
+        borderRadius: "3px",
+        transition: "left 0.5s ease",
       }}
-    >
-      <div
-        id="indicator"
-        style={{
-          height: "6px",
-          background: "#ffff",
-          width: "9.33%",
-          position: "absolute",
-          left: 0,
-          top: 0,
-              borderBottom: "6px dashed #000", // makes a dashed line
-          borderColor: "#000",
-          transition: "left 0.5s ease",
-        }}
-      ></div>
-    </div>
-
-    <button
-      id="next"
-      style={{
-        padding: "0.8rem 1.6rem",
-        color: "#fff",
-        border: "none",
-        cursor: "pointer",
-         borderRadius: "20%",
-          backgroundColor: "#1b1b1b",
-      }}
-    >
-      ➜
-    </button>
+    ></div>
   </div>
+
+  {/* Next Button */}
+  <button
+    id="next"
+    style={{
+      padding: "0.8rem 1.6rem",
+      color: "#fff",
+      border: "none",
+      cursor: "pointer",
+      borderRadius: "8px",
+      backgroundColor: "#1b1b1b",
+      fontSize: "1.2rem",
+    }}
+  >
+    ➜
+  </button>
+</div>
+
 
   {/* FIXED JS */}
   <script
@@ -1165,7 +1172,7 @@ useEffect(() => {
     width:
       window.innerWidth < 600
         ? "120px"        // small on mobile
-        : "200px",       // normal on desktop
+        : "250px",       // normal on desktop
 
     height: "auto",
     margin: "0 auto",
@@ -1227,9 +1234,10 @@ useEffect(() => {
           color: "#fff",
           fontSize: "1.3rem",
           cursor: "pointer",
+          rotate: "180deg",
         }}
       >
-        ⬅
+        ➜
       </button>
 
       <button

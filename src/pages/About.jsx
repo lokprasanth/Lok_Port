@@ -49,8 +49,7 @@ useEffect(() => {
         <div className="flex-1 text-left space-y-9">
           <h1 className="text-3xl md:text-5xl font-bold">Hi, I'm Lok Prasanth</h1>
           <p className="text-gray-400 text-base md:text-lg">
-            A front-end developer passionate about building seamless digital experiences using React, Tailwind CSS, and modern web technologies. My goal is to turn designs into pixel-perfect, accessible, and performant interfaces.
-          </p>
+A front-end developer dedicated to crafting seamless and engaging digital experiences using React, Tailwind CSS, and modern web technologies. Alongside front-end development, I possess broad knowledge across multiple domains and leverage AI tools to enhance efficiency, automate workflows, and optimize solutions. My goal is to transform designs into pixel-perfect, accessible, and high-performance interfaces while staying adaptable to emerging technologies.          </p>
           <button className="relative inline-flex items-center gap-2 px-6 py-2 rounded-lg text-green-300 font-medium bg-green-900/20 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
@@ -135,8 +134,8 @@ useEffect(() => {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-gray-400">
             {[
              "Responsive Design", "Web Accessibility", "UI/UX", "Git & GitHub", "REST APIs", "State Management", 
-             "Version Control","Figma to Code", "API Integration","Testing", "Performance Optimization",
-             "CI/CD", "Browser Compatibility", "Soft Skills", "Agile & Scrum", "Deployment", "And many more"
+             "Version Control","Figma to Code", "API Integration","Testing", "Performance Optimization","B2B","Data Visualization",
+             "CI/CD", "Browser Compatibility", "Soft Skills", "Agile & Scrum", "Deployment","Data Analytics","And many more"
             ].map((item, index) => (
               <span
                 key={index}
@@ -227,7 +226,7 @@ useEffect(() => {
       position: "absolute",
     }}
   >
-    Achievments
+    Activities
   </span>
 
   {/* ⚡ POWER ICON */}
@@ -288,7 +287,7 @@ useEffect(() => {
       }}
     >
       {[...Array(2)].flatMap(() =>
-        ["/pic.jpeg","/pic1.jpeg","/pic.jpeg", "/pic.jpeg", "/pic.jpeg"].map(
+        ["/ladder.jpg","/shut.jpg","/need.avif", "/pubg.jpg", "/asphalt.webp"].map(
           (src, i) => (
             <img key={`top-${src}-${i}`} src={src} alt="" className="slider-image" />
           )
@@ -313,7 +312,7 @@ useEffect(() => {
       }}
     >
       {[...Array(2)].flatMap(() =>
-        ["/pic.jpeg", "/pic.jpeg", "/card6.png","/pic.jpeg", "/card9.png"].map(
+        ["/cricket.png", "/monopoly.png", "/card6.png","/free.jpg", "/card9.png"].map(
           (src, i) => (
             <img key={`bottom-${src}-${i}`} src={src} alt="" className="slider-image" />
           )
@@ -322,6 +321,10 @@ useEffect(() => {
     </div>
   </div>
 </section>
+
+<div className="flex justify-center items-center py-10">
+  <img src="bag.avif" alt="balance icon" className="w-72 sm:w-[760px] h-auto object-contain" />
+</div>
 
 
       {/* Balance Section */}
