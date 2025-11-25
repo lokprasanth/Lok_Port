@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   const roles = [
     "Front-End Developer",
     "UI/UX Enthusiast",
@@ -649,7 +652,7 @@ onMouseLeave={(e) => {
     e.target.style.boxShadow =
       "0 4px 20px rgba(255,255,255,0.2) inset, 0 6px 20px rgba(0,0,0,0.3)";
   }}
-onClick={() => window.location.assign("/about")}
+onClick={() => navigate("/about")}
 >
   {/* Gloss Highlight */}
   <span
