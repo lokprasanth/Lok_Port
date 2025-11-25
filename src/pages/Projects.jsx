@@ -6,8 +6,9 @@ const detailedProjects = [
     title: "iTNT HUB Website with an innovative user interface",
     buttons: ["Html", "Css", "Bootstrap", "JavaScript", "UI Testing", "Frontend Developement"],
     tools: "HTML5, CSS3, Bootstrap 5, JavaScript, REST API, GitHub",
-responsibilities: "Contributed to the creation of responsive web pages and comprehensive project documentation as part of a collaborative team, integrated RESTful APIs for dynamic content, ensured cross-browser compatibility, and optimized front-end components for improved performance.",
-purpose: "iTNT is an innovation hub established by the Tamil Nadu government to catalyze a deep‑tech and emerging-tech ecosystem by supporting startups, researchers, and academia. It fosters R&D, industry‑academia collaboration, and global partnerships to scale groundbreaking technologies.."
+   responsibilities: "Contributed to the creation of responsive web pages and comprehensive project documentation as part of a collaborative team, integrated RESTful APIs for dynamic content, ensured cross-browser compatibility, and optimized front-end components for improved performance.",
+   purpose: "iTNT is an innovation hub established by the Tamil Nadu government to catalyze a deep‑tech and emerging-tech ecosystem by supporting startups, researchers, and academia. It fosters R&D, industry‑academia collaboration, and global partnerships to scale groundbreaking technologies..",
+  link: "https://itnthub.tn.gov.in/",
 
   },
   {
@@ -17,8 +18,9 @@ purpose: "iTNT is an innovation hub established by the Tamil Nadu government to 
     title: "Vitti Living Website with innovative user interface",
     buttons: ["Tailwind CSS", "Html", "Css", "JavaScript", "Frontend Developement"],
     tools: "HTML5, CSS3, Bootstrap 5, JavaScript, REST API, GitHub",
-responsibilities: "Contributed to building responsive web pages, integrated dynamic content through APIs, ensured cross-browser compatibility, and assisted in maintaining project documentation as part of a collaborative team.",
-purpose: "A home-furniture brand creating handcrafted, sustainable, and timeless pieces that blend utility with refined design, supporting mindful consumption and long-lasting living."
+    responsibilities: "Contributed to building responsive web pages, integrated dynamic content through APIs, ensured cross-browser compatibility, and assisted in maintaining project documentation as part of a collaborative team.",
+    purpose: "A home-furniture brand creating handcrafted, sustainable, and timeless pieces that blend utility with refined design, supporting mindful consumption and long-lasting living.",
+     link: "https://www.vittiliving.com/",
 
   },
   {
@@ -29,7 +31,8 @@ purpose: "A home-furniture brand creating handcrafted, sustainable, and timeless
     buttons: ["JavaScript", "Bootstrap", "Html", "Tailwindcss", "Frontend Developement"],
     tools: "HTML5, CSS3, Bootstrap 5, JavaScript, REST API, GitHub",
 responsibilities: "Contributed to the development of responsive exam interfaces, implemented dynamic question rendering, integrated RESTful APIs for real-time scoring, and assisted in maintaining project documentation as part of a collaborative team.",
-purpose: "An online examination platform designed to facilitate timed tests, instant scoring, and performance analytics, providing students and institutions with an efficient and interactive assessment experience."
+purpose: "An online examination platform designed to facilitate timed tests, instant scoring, and performance analytics, providing students and institutions with an efficient and interactive assessment experience.",
+     link: "https://www.speedexam.net/",
 
   },
   {
