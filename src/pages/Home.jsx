@@ -17,7 +17,7 @@ export default function Home() {
     {
       bg: "head.jpg",
       heading: "Turning Ideas",
-      subHeading: "into Interfaces⚡",
+      subHeading: "into Interfaces💡",
       description:
         "I craft responsive, user-centric web applications using modern technologies like React, Tailwind CSS, and more",
     },
@@ -130,8 +130,8 @@ export default function Home() {
 // Certificates 
 useEffect(() => {
   const certificates = [
-    { img: "/cert1.png", title: "FullStack" },
-    { img: "/cert2.png", title: "Marketing" },
+    { img: "/cert2.png", title: "FullStack" },
+    { img: "/cert1.png", title: "Marketing" },
     { img: "/cert4.png", title: "Data Analyst" },
     { img: "/cert5.png", title: "Excel" },
     { img: "/cert6.png", title: "Python" },
@@ -480,7 +480,7 @@ useEffect(() => {
         margin: 0,
       }}
     >
-      A Little About Me🧑🏻‍🎓
+      🪄A Little About Me
     </h2>
   </div>
 
@@ -564,29 +564,38 @@ useEffect(() => {
       style={{
         width: "340px",
         maxWidth: "100%",
-        borderRadius: "1rem",
-        overflow: "visible",
-        backgroundColor: "#121212",
-        boxShadow: "0 0 30px rgba(0, 0, 0, 0.5)",
+        // borderRadius: "1rem",
+        // overflow: "visible",
+        // backgroundColor: "#121212",
+        // boxShadow: "0 0 30px rgba(0, 0, 0, 0.5)",
         textAlign: "center",
-        border: "2px solid #2c2c2c",
-        padding: "1.5rem 1rem 2rem",
+        // border: "2px solid #2c2c2c",
+        // padding: "1.5rem 1rem 2rem",
         position: "relative",
       }}
     >
-      <div
-        style={{
-          width: "100%",
-          height: "220px",
-          backgroundImage: "url('/pic1.jpeg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          borderRadius: "0.75rem",
-          marginBottom: "2.5rem",
-          position: "relative",
-        }}
-      >
-        <img
+     <div
+  style={{
+    width: "100%",
+    height: "260px",
+    backgroundImage: "url('/lp.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    marginBottom: "2.5rem",
+    position: "relative",
+    cursor: "pointer",
+    transition: "all 0.4s ease",
+  }}
+ onMouseEnter={(e) => {
+  e.currentTarget.style.filter = "hue-rotate(-180deg) saturate(1.6)";
+}}
+onMouseLeave={(e) => {
+  e.currentTarget.style.filter = "none";
+}}
+
+>
+
+        {/* <img
           src="/pic2.jpeg"
           alt="Profile"
           style={{
@@ -601,7 +610,7 @@ useEffect(() => {
             border: "3px solid #facc15",
             backgroundColor: "#121212",
           }}
-        />
+        /> */}
       </div>
 
       <div style={{ marginTop: "1rem" }}>
@@ -613,7 +622,7 @@ useEffect(() => {
     {/* Button Outside the Card */}
     <button
   style={{
-    marginTop: "0.5rem",
+    marginTop: "1rem",
     padding: "0.7rem 1.6rem",
     background: "rgba(255, 255, 255, 0.15)",
     border: "1px solid rgba(255, 255, 255, 0.3)",
@@ -1410,7 +1419,7 @@ onClick={() => window.location.assign("/about")}
       }}
     >
       {[...Array(2)].flatMap(() =>
-        ["/card2.png", "/card4.png", "/card1.png", "/card7.png", "/card3.png"].map(
+        ["/card2.png", "/card4.png", "/card1.png", "/card7.png", "/card3.png","/vitti.png"].map(
           (src, i) => (
             <img key={`top-${src}-${i}`} src={src} className="slider-image" />
           )
@@ -1435,7 +1444,7 @@ onClick={() => window.location.assign("/about")}
       }}
     >
       {[...Array(2)].flatMap(() =>
-        ["/speedexam.png", "/card8.png", "/card6.png", "/vitti-living.png", "/card9.png"].map(
+        ["/speedexam.png", "/card8.png", "/card6.png","/bi.png", "/vitti.png", "/card9.png"].map(
           (src, i) => (
             <img key={`bottom-${src}-${i}`} src={src} className="slider-image" />
           )

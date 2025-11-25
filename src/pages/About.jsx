@@ -322,9 +322,18 @@ A front-end developer dedicated to crafting seamless and engaging digital experi
   </div>
 </section>
 
-<div className="flex justify-center items-center py-10">
-  <img src="bag.avif" alt="balance icon" className="w-72 sm:w-[760px] h-auto object-contain" />
+<div className="flex flex-col justify-center items-center py-10">
+  <img
+    src="bag.avif"
+    alt="balance icon"
+    className="w-72 sm:w-[760px] h-auto object-contain"
+  />
+
+  <p className="text-white text-[24px] sm:text-[30px] font-medium font-[Poppins] mt-4">
+    “Dream boldly, work quietly, and let your results speak loudly.”
+  </p>
 </div>
+
 
 
       {/* Balance Section */}

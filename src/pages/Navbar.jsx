@@ -48,7 +48,9 @@ function Navbar() {
             `}
             style={{ fontFamily: "'Cinzel', serif" }}
           >
-            <span>LOK</span>
+            
+           <Link className="hover:text-blue-700 transition" to="/">LOK</Link>
+
 
             <div className="h-[1.5rem] overflow-hidden ml-2">
               <div
@@ -74,11 +76,11 @@ function Navbar() {
               ${scrolled ? "gap-5 text-sm" : "gap-8 text-base"}
             `}
           >
-            <Link className="hover:text-yellow-400 transition" to="/">Home</Link>
-            <Link className="hover:text-yellow-400 transition" to="/about">About</Link>
-            <Link className="hover:text-yellow-400 transition" to="/projects">Projects</Link>
-            <Link className="hover:text-yellow-400 transition" to="/contact">Contact</Link>
-            <a href="/resume.pdf" download className="hover:text-yellow-400 transition">Resume</a>
+            <Link className="hover:text-orange-400 transition" to="/">Home</Link>
+            <Link className="hover:text-orange-400 transition" to="/about">About</Link>
+            <Link className="hover:text-slate-100 transition" to="/projects">Projects</Link>
+            <Link className="hover:text-green-400 transition" to="/contact">Contact</Link>
+            <a href="/resume.pdf" download className="hover:text-green-400 transition">Resume</a>
           </div>
 
           {/* Mobile Button */}
@@ -99,9 +101,9 @@ function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden transition-all duration-300 overflow-hidden 
-        ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+        ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-100"}`}
       >
-        <div className="flex flex-col gap-4 px-6 py-6 bg-white/10 backdrop-blur-lg border-t border-white/20 text-center text-white">
+        <div className="flex flex-col gap-4 px-6 py-6 bg-white/10 backdrop-blur-sm border-t border-white/20 text-center text-white">
           <Link onClick={() => setIsOpen(false)} to="/" className="hover:text-yellow-400">Home</Link>
           <Link onClick={() => setIsOpen(false)} to="/about" className="hover:text-yellow-400">About</Link>
           <Link onClick={() => setIsOpen(false)} to="/projects" className="hover:text-yellow-400">Projects</Link>
