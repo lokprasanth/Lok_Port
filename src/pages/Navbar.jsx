@@ -80,7 +80,6 @@ function Navbar() {
             <Link className="hover:text-orange-400 transition" to="/about">About</Link>
             <Link className="hover:text-slate-100 transition" to="/projects">Projects</Link>
             <Link className="hover:text-green-400 transition" to="/contact">Contact</Link>
-            <a href="" download className="hover:text-green-400 transition">Resume</a>
           </div>
 
           {/* Mobile Button */}
@@ -108,7 +107,6 @@ function Navbar() {
           <Link onClick={() => setIsOpen(false)} to="/about" className="hover:text-yellow-400">About</Link>
           <Link onClick={() => setIsOpen(false)} to="/projects" className="hover:text-yellow-400">Projects</Link>
           <Link onClick={() => setIsOpen(false)} to="/contact" className="hover:text-yellow-400">Contact</Link>
-          <a onClick={() => setIsOpen(false)} href="" download className="hover:text-yellow-400">Resume</a>
         </div>
       </div>
     </nav>
