@@ -767,94 +767,8 @@ onClick={() => navigate("/about")}
   </div>
 
   {/* Mobile Responsive Media Query */}
+ 
   <style>
-{`
-/* -------------------- FORCE SECTION BACKGROUND -------------------- */
-section {
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* -------------------- TABLET -------------------- */
-@media (max-width: 1024px) {
-  section {
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-}
-
-/* -------------------- MOBILE -------------------- */
-@media (max-width: 768px) {
-
-  section {
-    padding: 1.5rem 1rem !important;
-    gap: 1.5rem !important;
-    background-size: contain !important; /* KEEP LIGHT BIG */
-  }
-
-  h2 {
-    font-size: 1.5rem !important;
-    text-align: center !important;
-  }
-
-  section > div {
-    max-width: 380px !important;
-    width: 100% !important;
-  }
-
-  div[style*="340px"] {
-    width: 320px !important;
-  }
-
-  div[style*="300px"] {
-    width: 100% !important;
-  }
-
-  /* ---------------- PROFILE IMAGE ONLY ---------------- */
-  div[style*="lp.png"] {
-    height: 250px !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-  }
-
-  button {
-    width: auto !important;
-    padding: 0.6rem 1.4rem !important;
-    font-size: 0.9rem !important;
-  }
-}
-
-/* -------------------- SMALL MOBILE -------------------- */
-@media (max-width: 480px) {
-
-  h2 {
-    font-size: 1.35rem !important;
-  }
-
-  p,
-  span {
-    font-size: 0.8rem !important;
-  }
-
-  /* Smaller profile image */
-  div[style*="lp.png"] {
-    height: 250px !important;
-    background-size: contain !important;
-  }
-
-  button {
-    padding: 0.55rem 1.2rem !important;
-    font-size: 0.85rem !important;
-  }
-}
-`}
-</style>
-
-
-{/* old style */}
-  {/* <style>
     {`
       @media (max-width: 1024px) {
         section {
@@ -906,7 +820,7 @@ section {
         }
       }
     `}
-  </style> */}
+  </style>
 </section>
 
 
