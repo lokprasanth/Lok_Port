@@ -49,7 +49,7 @@ function Navbar() {
             style={{ fontFamily: "'Cinzel', serif" }}
           >
             
-           <Link className="hover:text-blue-700 transition" to="/">LOK</Link>
+           <Link className="hover:text-blue-500 transition" to="/">LOK</Link>
 
 
             <div className="h-[1.5rem] overflow-hidden ml-2">
@@ -72,14 +72,14 @@ function Navbar() {
           {/* RIGHT — Desktop Menu */}
           <div
             className={`
-              hidden md:flex items-center text-white font-medium transition-all duration-300
+              hidden md:flex items-center text-white font-semibold transition-all duration-300
               ${scrolled ? "gap-5 text-sm" : "gap-8 text-base"}
             `}
           >
-            <Link className="hover:text-orange-400 transition" to="/">Home</Link>
-            <Link className="hover:text-orange-400 transition" to="/about">About</Link>
-            <Link className="hover:text-slate-100 transition" to="/projects">Projects</Link>
-            <Link className="hover:text-green-400 transition" to="/contact">Contact</Link>
+            <Link className="hover:text-lime-300 transition" to="/">HOME</Link>
+            <Link className="hover:text-lime-300 transition" to="/about">ABOUT</Link>
+            <Link className="hover:text-lime-300 transition" to="/projects">PROJECTS</Link>
+            <Link className="hover:text-lime-300 transition" to="/contact">CONTACT</Link>
           </div>
 
           {/* Mobile Button */}
