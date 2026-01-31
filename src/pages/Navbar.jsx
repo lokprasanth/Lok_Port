@@ -85,7 +85,6 @@ function Navbar() {
             <Link className="hover:text-lime-300 transition" to="/">HOME</Link>
             <Link className="hover:text-lime-300 transition" to="/about">ABOUT</Link>
             <Link className="hover:text-lime-300 transition" to="/projects">PROJECTS</Link>
-            <Link className="hover:text-lime-300 transition" to="/contact">CONTACT</Link>
           </div>
 
           {/* Mobile Button */}
@@ -106,42 +105,34 @@ function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-     {/* Mobile Menu */}
-<div
-  className={`md:hidden fixed top-0 left-0 w-full h-screen z-50 transition-all duration-500 
-    ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
->
-  <div className="flex flex-col justify-center items-center h-full bg-black/70 backdrop-blur-lg text-white gap-8">
-    <Link
-      onClick={() => setIsOpen(false)}
-      to="/"
-      className="text-2xl font-bold uppercase tracking-wider hover:text-yellow-400 transition-transform transform hover:scale-110"
-    >
-      Home
-    </Link>
-    <Link
-      onClick={() => setIsOpen(false)}
-      to="/about"
-      className="text-2xl font-bold uppercase tracking-wider hover:text-yellow-400 transition-transform transform hover:scale-110"
-    >
-      About
-    </Link>
-    <Link
-      onClick={() => setIsOpen(false)}
-      to="/projects"
-      className="text-2xl font-bold uppercase tracking-wider hover:text-yellow-400 transition-transform transform hover:scale-110"
-    >
-      Projects
-    </Link>
-    <Link
-      onClick={() => setIsOpen(false)}
-      to="/contact"
-      className="text-2xl font-bold uppercase tracking-wider hover:text-yellow-400 transition-transform transform hover:scale-110"
-    >
-      Contact
-    </Link>
-  </div>
-</div>
+      <div
+        className={`md:hidden fixed top-0 left-0 w-full h-screen z-50 transition-all duration-500 
+          ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
+      >
+        <div className="flex flex-col justify-center items-center h-full bg-black/70 backdrop-blur-lg text-white gap-8">
+          <Link
+            onClick={() => setIsOpen(false)}
+            to="/"
+            className="text-2xl font-bold uppercase tracking-wider hover:text-yellow-400 transition-transform transform hover:scale-110"
+          >
+            Home
+          </Link>
+          <Link
+            onClick={() => setIsOpen(false)}
+            to="/about"
+            className="text-2xl font-bold uppercase tracking-wider hover:text-yellow-400 transition-transform transform hover:scale-110"
+          >
+            About
+          </Link>
+          <Link
+            onClick={() => setIsOpen(false)}
+            to="/projects"
+            className="text-2xl font-bold uppercase tracking-wider hover:text-yellow-400 transition-transform transform hover:scale-110"
+          >
+            Projects
+          </Link>
+        </div>
+      </div>
 
     </nav>
   );
