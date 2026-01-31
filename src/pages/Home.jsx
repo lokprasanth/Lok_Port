@@ -4,16 +4,24 @@ import { useNavigate } from "react-router-dom";
 export default function Home() {
   const navigate = useNavigate();
 
+  // Screen width reactive
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Hero roles
   const roles = [
-    "Front-End Developer",
-    "UI/UX Enthusiast",
-    "React & TypeScript Specialist",
-    "Pixel-Perfect Coder",
+    "Front-End Development",
+    "UI/UX Design & Pixel-Perfect Implementation",
+    "Data-Driven Analytics & Optimization",
+    "Project & Product Management",
   ];
 
   const colors = ["#f8fafc", "#e2e8f0", "#cbd5e1"];
   const [index, setIndex] = useState(0);
-  const [waveX, setWaveX] = useState(0);
 
   // Hero slides
   const slides = [
@@ -22,35 +30,31 @@ export default function Home() {
       heading: "Turning Ideas",
       subHeading: "into Interfaces💡",
       description:
-        "I craft responsive, user-centric web applications using modern technologies like React, Tailwind CSS, and more",
+        "I craft responsive, user-centric web applications using React, TypeScript, and modern front-end tools.",
     },
     {
       bg: "runway.png",
       heading: "Creative Designs",
       subHeading: "for Web & Mobile",
-      description:
-        "Designing seamless experiences with a focus on UI/UX and modern trends",
+      description: "I design intuitive, pixel-perfect UI/UX experiences that delight users and enhance engagement",
     },
     {
       bg: "Vilot.png",
       heading: "Performance Focused",
       subHeading: "Optimized Apps",
-      description:
-        "Building high-performance applications that users love",
+      description: "I leverage data-driven insights to optimize performance and improve product outcomes.",
     },
   ];
-
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Change role every 2s
+  // Hero role rotation
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % roles.length);
-    }, 2000);
+    const interval = setInterval(() => setIndex((prev) => (prev + 1) % roles.length), 2000);
     return () => clearInterval(interval);
   }, []);
 
   // Wave animation
+  const [waveX, setWaveX] = useState(0);
   useEffect(() => {
     let x = 0;
     const interval = setInterval(() => {
@@ -60,122 +64,95 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // Hero slide animation
+  // Hero slide auto change
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    const interval = setInterval(() => setCurrentSlide((prev) => (prev + 1) % slides.length), 5000);
     return () => clearInterval(interval);
   }, []);
 
-// Carousel functionality
- useEffect(() => {
-  const carousel = document.getElementById("carousel-container");
-  const textCarousel = document.getElementById("carousel-texts");
+  // Carousel functionality
+  useEffect(() => {
+    const carousel = document.getElementById("carousel-container");
+    const textCarousel = document.getElementById("carousel-texts");
+    const indicator = document.getElementById("indicator");
+    if (!carousel || !textCarousel || !indicator) return;
 
-  const boxes = Array.from(carousel.getElementsByClassName("carousel-box"));
-  const texts = Array.from(textCarousel.children);
+    const boxes = Array.from(carousel.getElementsByClassName("carousel-box"));
+    const texts = Array.from(textCarousel.children);
+    let currentIndex = 0;
 
-  const indicator = document.getElementById("indicator");
-  let currentIndex = 0;
+    const updateCarousel = () => {
+      const gap = parseInt(getComputedStyle(carousel).gap);
+      const boxWidth = boxes[0].offsetWidth + gap;
+      carousel.style.transform = `translateX(${-currentIndex * boxWidth}px)`;
+      textCarousel.style.transform = `translateX(${-currentIndex * boxWidth}px)`;
+      indicator.style.left = (currentIndex * 100) / boxes.length + "%";
 
-  const updateCarousel = () => {
-    const gap = parseInt(getComputedStyle(carousel).gap); 
-    const boxWidth = boxes[0].offsetWidth + gap;
+      boxes.forEach((box, idx) => {
+        box.style.transform = idx === currentIndex ? "scale(1) translateX(20px)" : "scale(1)";
+      });
+      texts.forEach((txt, idx) => {
+        txt.style.opacity = idx === currentIndex ? "1" : "0.3";
+        txt.style.transform = idx === currentIndex ? "scale(1.05)" : "scale(1)";
+        txt.style.transition = "all 0.4s ease";
+      });
+    };
 
-    // Move image slider
-    carousel.style.transform = `translateX(${-currentIndex * boxWidth}px)`;
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+    if (prevBtn) prevBtn.onclick = () => {
+      currentIndex = currentIndex === 0 ? boxes.length - 1 : currentIndex - 1;
+      updateCarousel();
+    };
+    if (nextBtn) nextBtn.onclick = () => {
+      currentIndex = currentIndex === boxes.length - 1 ? 0 : currentIndex + 1;
+      updateCarousel();
+    };
 
-    // Move text slider
-    textCarousel.style.transform = `translateX(${-currentIndex * boxWidth}px)`;
-
-    // Indicator
-    indicator.style.left = (currentIndex * 100) / boxes.length + "%";
-
-    // Scale + Compensation shift
-    boxes.forEach((box, idx) => {
-      if (idx === currentIndex) {
-        box.style.transform = "scale(1) translateX(20px)"; 
-      } else {
-        box.style.transform = "scale(1)";
-      }
-    });
-
-    // Text highlight
-    texts.forEach((txt, idx) => {
-      txt.style.opacity = idx === currentIndex ? "1" : "0.3";
-      txt.style.transform = idx === currentIndex ? "scale(1.05)" : "scale(1)";
-      txt.style.transition = "all 0.4s ease";
-    });
-  };
-
-  const prevBtn = document.getElementById("prev");
-  const nextBtn = document.getElementById("next");
-
-  prevBtn.onclick = () => {
-    currentIndex = currentIndex === 0 ? boxes.length - 1 : currentIndex - 1;
     updateCarousel();
-  };
+  }, []);
 
-  nextBtn.onclick = () => {
-    currentIndex = currentIndex === boxes.length - 1 ? 0 : currentIndex + 1;
-    updateCarousel();
-  };
+  // Certificates
+  useEffect(() => {
+    const certificates = [
+      { img: "/cert2.png", title: "FullStack" },
+      { img: "/cert1.png", title: "Marketing" },
+      { img: "/cert4.png", title: "Data Analyst" },
+      { img: "/cert5.png", title: "Excel" },
+      { img: "/cert6.png", title: "Python" },
+    ];
+    let currentCert = 0;
+    const certImg = document.getElementById("cert-img");
+    const thumbImg = document.getElementById("cert-thumb");
+    const certTitle = document.getElementById("cert-title");
+    const prevBtn = document.getElementById("prev-cert");
+    const nextBtn = document.getElementById("next-cert");
 
-  updateCarousel();
+    if (!certImg || !thumbImg || !certTitle) return;
 
-  // REMOVE AUTOPLAY  
-  return () => {};
-}, []);
+    const updateCert = (index) => {
+      certImg.style.opacity = "0";
+      thumbImg.style.opacity = "0";
+      setTimeout(() => {
+        certImg.src = certificates[index].img;
+        thumbImg.src = certificates[(index + 1) % certificates.length].img;
+        certTitle.textContent = certificates[index].title;
+        certImg.style.opacity = "1";
+        thumbImg.style.opacity = "1";
+      }, 200);
+    };
 
+    if (prevBtn) prevBtn.onclick = () => {
+      currentCert = currentCert === 0 ? certificates.length - 1 : currentCert - 1;
+      updateCert(currentCert);
+    };
+    if (nextBtn) nextBtn.onclick = () => {
+      currentCert = currentCert === certificates.length - 1 ? 0 : currentCert + 1;
+      updateCert(currentCert);
+    };
 
-
-// Certificates 
-useEffect(() => {
-  const certificates = [
-    { img: "/cert2.png", title: "FullStack" },
-    { img: "/cert1.png", title: "Marketing" },
-    { img: "/cert4.png", title: "Data Analyst" },
-    { img: "/cert5.png", title: "Excel" },
-    { img: "/cert6.png", title: "Python" },
-
-  ];
-
-  let currentCert = 0;
-
-  const certImg = document.getElementById("cert-img");
-  const thumbImg = document.getElementById("cert-thumb");
-  const certTitle = document.getElementById("cert-title");
-
-  const prevBtn = document.getElementById("prev-cert");
-  const nextBtn = document.getElementById("next-cert");
-
-  const updateCert = (index) => {
-    certImg.style.opacity = "0";
-    thumbImg.style.opacity = "0";
-    setTimeout(() => {
-      certImg.src = certificates[index].img;
-      thumbImg.src = certificates[(index + 1) % certificates.length].img; // next thumbnail
-      certTitle.textContent = certificates[index].title;
-      certImg.style.opacity = "1";
-      thumbImg.style.opacity = "1";
-    }, 200);
-  };
-
-  prevBtn.onclick = () => {
-    currentCert = currentCert === 0 ? certificates.length - 1 : currentCert - 1;
     updateCert(currentCert);
-  };
-
-  nextBtn.onclick = () => {
-    currentCert = currentCert === certificates.length - 1 ? 0 : currentCert + 1;
-    updateCert(currentCert);
-  };
-
-  // initialize
-  updateCert(currentCert);
-}, []);
-
+  }, []);
 
   return (
     <main style={{ fontFamily: "Segoe UI, sans-serif" }}>
@@ -226,7 +203,7 @@ useEffect(() => {
           }}
         />
 
-        {/* Wave Background */}
+        {/* Wave */}
         <div
           style={{
             position: "absolute",
@@ -275,7 +252,7 @@ useEffect(() => {
             flexWrap: "wrap",
           }}
         >
-          {/* Left: Heading */}
+          {/* Left */}
           <div
             style={{
               flex: "1 1 50%",
@@ -369,89 +346,19 @@ useEffect(() => {
                 margin: 0,
               }}
             >
-              I specialize in crafting responsive, user-centric web applications using modern technologies like React, Tailwind CSS, and more
-            </p>
+              I build responsive, user-centric web applications using modern frameworks, craft intuitive UI/UX, optimize performance with analytics, and manage projects efficiently            </p>
           </div>
         </div>
 
-        {/* Animation Style */}
         <style>
           {`
-          @keyframes pulseGlow {
-            0%, 100% {
-              transform: translate(-50%, -50%) scale(1);
-              opacity: 0.1;
+            @keyframes pulseGlow {
+              0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+              50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.2; }
             }
-            50% {
-              transform: translate(-50%, -50%) scale(1.05);
-              opacity: 0.2;
-            }
-          }
-        `}
+          `}
         </style>
       </section>
-
-      {/* Scrolling Banner */}
-   <div
-  style={{
-    position: "relative",
-    width: "100%",
-    height: "80px",
-    overflow: "hidden",
-    borderRadius: "6px",
-    background: "transparent",
-  }}
->
-  <div
-    className="logo-track"
-    style={{
-      position: "absolute",
-      whiteSpace: "nowrap",
-      display: "flex",
-      alignItems: "center",
-      gap: "40px",
-      animation: "slideBanner 30s linear infinite", // slower speed
-      fontSize: "1.5rem",
-      fontWeight: "700",
-      fontFamily: "sans-serif",
-    }}
-  >
-    {/* Text logos with unique hover colors */}
-    <span className="logo-text ldev">LDEV</span>
-    <span className="logo-text zaalima">Zaalima</span>
-    <span className="logo-text nextgen">Freelancer</span>
-    <span className="logo-text techcorp"></span>
-
-    {/* duplicate for seamless scroll */}
-    <span className="logo-text ldev">LDEV</span>
-    <span className="logo-text zaalima">Zaalima</span>
-    <span className="logo-text nextgen">Freelancer</span>
-    <span className="logo-text techcorp"></span>
-  </div>
-
-  <style>
-    {`
-      /* Default grayscale color */
-      .logo-text {
-        color: #555;
-        transition: color 0.3s ease;
-        cursor: default;
-      }
-
-      /* Individual hover colors */
-      .logo-text.ldev:hover { color: #1DA1F2; }       /* Blue */
-      .logo-text.zaalima:hover { color: #fff;} 
-      .logo-text.nextgen:hover { color: #32CD32; }   /* Lime green */
-      .logo-text.techcorp:hover { color: #FFD700; }  /* Gold */
-
-      /* Scroll animation */
-      @keyframes slideBanner {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-      }
-    `}
-  </style>
-</div>
 
 
 
@@ -583,7 +490,7 @@ useEffect(() => {
       <div
   style={{
     width: "100%",
-    height: "240px",
+    height: "360px",
     backgroundImage: "url('/lp.png')",
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -844,12 +751,29 @@ onClick={() => navigate("/about")}
     style={{
       fontSize: "clamp(2rem, 5vw, 3rem)",
       fontWeight: 600,
-      color: "#e5e5e5",
+      color: "#fff",
       marginBottom: "4rem",
     }}
   >
     Projects
   </h2>
+
+<div
+  style={{
+    maxWidth: "900px",
+    margin: "0 auto 4rem",
+    textAlign: "center",
+    color: "#fff",
+    fontSize: "1.05rem",
+    lineHeight: "1.7",
+  }}
+>
+  <p>
+    A curated selection of projects showcasing my work in web development,
+    UI design, and modern frontend technologies. Each project reflects a
+    focus on performance, responsiveness, and clean user experience.
+  </p>
+</div>
 
   <div style={{ position: "relative", overflow: "hidden", marginBottom: "3rem" }}>
     <div
@@ -887,8 +811,8 @@ onClick={() => navigate("/about")}
     arrow.style.background = "rgba(0,0,0,0.55)"; // original
   }}
   style={{
-    flex: "0 0 500px",
-    height: "380px",
+    flex: "0 0 700px",
+    height: "480px",
     position: "relative",
     display: "flex",
     justifyContent: "center",
@@ -904,8 +828,8 @@ onClick={() => navigate("/about")}
             style={{
               width: "100%",
               height: "100%",
-              borderRadius: "16px",
-              border: "3px solid #2c2c2c",
+              borderRadius: "45px",
+              border: "3px solid #ffff",
               overflow: "hidden",
               transition: "transform 0.5s ease",
                   position: "relative", // needed for overlay
@@ -973,7 +897,7 @@ onClick={() => navigate("/about")}
       <div
         key={index}
         style={{
-          flex: "0 0 500px",
+          flex: "0 0 710px",
           textAlign: "left",
           color: "#fff",
         }}
@@ -988,7 +912,7 @@ onClick={() => navigate("/about")}
               style={{
                 fontSize: "0.95rem",
                 color: "#fff",
-                background: "#1b1b1b",
+                background: "#0d47a1",
                 padding: "0.45rem 0.75rem",
                 borderRadius: "8px",
               }}
@@ -1019,7 +943,7 @@ onClick={() => navigate("/about")}
       color: "#fff",
       cursor: "pointer",
       borderRadius: "8px",
-      backgroundColor: "#1b1b1b",
+      backgroundColor: "#0a66c2",
       border: "none",
       transform: "rotate(180deg)", // fixed rotation
       fontSize: "1.2rem",
@@ -1031,7 +955,6 @@ onClick={() => navigate("/about")}
   {/* Progress Bar */}
   <div
     style={{
-      flex: 1,
       height: "6px",
       background: "#555",
       position: "relative",
@@ -1063,7 +986,7 @@ onClick={() => navigate("/about")}
       border: "none",
       cursor: "pointer",
       borderRadius: "8px",
-      backgroundColor: "#1b1b1b",
+      backgroundColor: "#0a66c2",
       fontSize: "1.2rem",
     }}
   >
@@ -1072,39 +995,34 @@ onClick={() => navigate("/about")}
 </div>
 
 
-  {/* FIXED JS */}
-  <script
-    dangerouslySetInnerHTML={{
-      __html: `
-      const carousel = document.getElementById('carousel-container');
-      const boxes = Array.from(document.getElementsByClassName('carousel-box'));
-      const indicator = document.getElementById('indicator');
-      let currentIndex = 0;
+ <script>
+{`
+let index = 0;
+const max = 3;
+const slideWidth = 700 + 32;
 
-      const updateCarousel = () => {
-        carousel.style.transform = 'translateX(' + (-currentIndex * 530) + 'px)';
-        indicator.style.left = (currentIndex * 100 / boxes.length) + '%';
+const img = document.getElementById("carousel-container");
+const text = document.getElementById("carousel-texts");
+const indicator = document.getElementById("indicator");
 
-        boxes.forEach((box, index) => {
-          const inner = box.querySelector('.inner-scale');
-          inner.style.transform = index === currentIndex ? 'scale(1.28)' : 'scale(1)';
-        });
-      };
+function updateCarousel() {
+  const x = -(index * slideWidth);
+  img.style.transform = 'translateX(' + x + 'px)';
+  text.style.transform = 'translateX(' + x + 'px)';
+  indicator.style.left = (index / max) * 100 + '%';
+}
 
-      document.getElementById('prev').onclick = () => {
-        currentIndex = currentIndex === 0 ? boxes.length - 1 : currentIndex - 1;
-        updateCarousel();
-      };
+document.getElementById("next").onclick = () => {
+  index = Math.min(index + 1, max);
+  updateCarousel();
+};
 
-      document.getElementById('next').onclick = () => {
-        currentIndex = currentIndex === boxes.length - 1 ? 0 : currentIndex + 1;
-        updateCarousel();
-      };
-
-      updateCarousel();
-    `,
-    }}
-  />
+document.getElementById("prev").onclick = () => {
+  index = Math.max(index - 1, 0);
+  updateCarousel();
+};
+`}
+</script>
 </section>
 
 

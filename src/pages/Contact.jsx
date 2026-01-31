@@ -2,7 +2,6 @@ function Contact() {
   const methods = [
     {
       label: "Email",
-      href: "mailto:Lokprasanth09s@gmail.com",
       icon: "https://img.icons8.com/fluency/48/gmail.png",
       sub: "lok@gmail.com",
     },
