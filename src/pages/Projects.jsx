@@ -6,9 +6,9 @@ const detailedProjects = [
     title: "iTNT HUB Website with an innovative user interface",
     buttons: ["Html", "Css", "Bootstrap", "JavaScript", "UI Testing", "Frontend Developement"],
     tools: "HTML5, CSS3, Bootstrap 5, JavaScript, REST API, GitHub",
-   responsibilities: "Contributed to the creation of responsive web pages and comprehensive project documentation as part of a collaborative team, integrated RESTful APIs for dynamic content, ensured cross-browser compatibility, and optimized front-end components for improved performance.",
-   purpose: "iTNT is an innovation hub established by the Tamil Nadu government to catalyze a deep‑tech and emerging-tech ecosystem by supporting startups, researchers, and academia. It fosters R&D, industry‑academia collaboration, and global partnerships to scale groundbreaking technologies..",
-  link: "https://itnthub.tn.gov.in/",
+    responsibilities: "Contributed to the creation of responsive web pages and comprehensive project documentation as part of a collaborative team, integrated RESTful APIs for dynamic content, ensured cross-browser compatibility, and optimized front-end components for improved performance.",
+    purpose: "iTNT is an innovation hub established by the Tamil Nadu government to catalyze a deep‑tech and emerging-tech ecosystem by supporting startups, researchers, and academia. It fosters R&D, industry‑academia collaboration, and global partnerships to scale groundbreaking technologies..",
+    link: "https://itnthub.tn.gov.in/",
 
   },
   {
@@ -20,7 +20,7 @@ const detailedProjects = [
     tools: "HTML5, CSS3, Bootstrap 5, JavaScript, REST API, GitHub",
     responsibilities: "Contributed to building responsive web pages, integrated dynamic content through APIs, ensured cross-browser compatibility, and assisted in maintaining project documentation as part of a collaborative team.",
     purpose: "A home-furniture brand creating handcrafted, sustainable, and timeless pieces that blend utility with refined design, supporting mindful consumption and long-lasting living.",
-     link: "https://www.vittiliving.com/",
+    link: "https://www.vittiliving.com/",
 
   },
   {
@@ -30,21 +30,21 @@ const detailedProjects = [
     title: "Speedexam",
     buttons: ["JavaScript", "Bootstrap", "Html", "Tailwindcss", "Frontend Developement"],
     tools: "HTML5, CSS3, Bootstrap 5, JavaScript, REST API, GitHub",
-responsibilities: "Contributed to the development of responsive exam interfaces, implemented dynamic question rendering, integrated RESTful APIs for real-time scoring, and assisted in maintaining project documentation as part of a collaborative team.",
-purpose: "An online examination platform designed to facilitate timed tests, instant scoring, and performance analytics, providing students and institutions with an efficient and interactive assessment experience.",
-     link: "https://www.speedexam.net/",
+    responsibilities: "Contributed to the development of responsive exam interfaces, implemented dynamic question rendering, integrated RESTful APIs for real-time scoring, and assisted in maintaining project documentation as part of a collaborative team.",
+    purpose: "An online examination platform designed to facilitate timed tests, instant scoring, and performance analytics, providing students and institutions with an efficient and interactive assessment experience.",
+    link: "https://www.speedexam.net/",
 
   },
   {
     id: 4,
     image: "card8.png",
     logo: "/healthlogo.png",
-    title: "Google Studio Dashboard Clone",
+    title: "Analytics Dashboard UI Implementation",
     buttons: ["React", "Tailwind CSS", "Responsive Design"],
-    link: "https://healthcare-dashboard.example.com",
+    link: "#",
     tools: "HTML5, CSS3, React.js, JavaScript, REST API, GitHub",
-responsibilities: "Contributed to building responsive dashboard interfaces, implemented interactive charts and widgets, integrated APIs for dynamic data visualization, and assisted in project documentation within a collaborative team environment.",
-purpose: "A web-based dashboard clone of Google Studio, designed to provide users with interactive data visualization, real-time analytics, and intuitive navigation for monitoring key metrics effectively."
+    responsibilities: "Contributed to building responsive dashboard interfaces, implemented interactive charts and widgets, integrated APIs for dynamic data visualization, and assisted in project documentation within a collaborative team environment.",
+    purpose: "A web-based dashboard implementation, designed to provide users with interactive data visualization, real-time analytics, and intuitive navigation for monitoring key metrics effectively."
 
   },
   {
@@ -53,15 +53,15 @@ purpose: "A web-based dashboard clone of Google Studio, designed to provide user
     logo: "/travelogo.png",
     title: "Food website Platform with Stunning UI",
     buttons: ["Tailwind CSS", "Django", "Frontend Development"],
-    link: "https://travelplatform.example.com",
+    link: "#",
   },
   {
     id: 6,
     title: "Port website",
-    logo: "/logos/speedexam.png",
+    logo: "/speed.png",
     image: "card7.png",
-    link: "https://speedexam.com",
-    buttons: ["React", "Redux","Three.js", "Styled Components", "Tailwindcss", "UI/UX"],
+    link: "#",
+    buttons: ["React", "Redux", "Three.js", "Styled Components", "Tailwindcss", "UI/UX"],
     tools: "React.js, Tailwind CSS, Firebase, REST API, Netlify",
     responsibilities:
       "Developed responsive UI components, optimized load speed, implemented dynamic question rendering and authentication flows.",
@@ -74,7 +74,7 @@ purpose: "A web-based dashboard clone of Google Studio, designed to provide user
     logo: "/ecomlogo.png",
     title: "Ecommerce website for professional",
     buttons: ["React", "Redux", "Styled Components", "Tailwindcss", "UI/UX"],
-    link: "https://ecommerce-app.example.com",
+    link: "#",
   },
 ];
 
@@ -87,7 +87,7 @@ function Projects() {
         color: "#fff",
       }}
     >
-     
+
 
       <h2
         style={{
@@ -280,81 +280,81 @@ function Projects() {
             </div>
 
             {/* Extra Project Details Section */}
-<div
-  style={{
-    width: "100%",
-    backgroundColor: "",
-    borderTop: "1px solid #1f1f1f",
-    borderRadius: "0 0 20px 20px",
-    padding: "1.5rem 2rem",
-    marginTop: "-2rem",
-    zIndex: 0,
-  }}
->
-  <h4
-    style={{
-      color: "#f5f5f5",
-      fontSize: "1.2rem",
-      marginBottom: "0.5rem",
-      fontWeight: 500,
-    }}
-  >
-    Tools Used:
-  </h4>
-  <p
-    style={{
-      color: "#bdbdbd",
-      lineHeight: 1.6,
-      marginBottom: "1.2rem",
-    }}
-  >
-    {project.tools}
-  </p>
+            <div
+              style={{
+                width: "100%",
+                backgroundColor: "",
+                borderTop: "1px solid #1f1f1f",
+                borderRadius: "0 0 20px 20px",
+                padding: "1.5rem 2rem",
+                marginTop: "-2rem",
+                zIndex: 0,
+              }}
+            >
+              <h4
+                style={{
+                  color: "#f5f5f5",
+                  fontSize: "1.2rem",
+                  marginBottom: "0.5rem",
+                  fontWeight: 500,
+                }}
+              >
+                Tools Used:
+              </h4>
+              <p
+                style={{
+                  color: "#bdbdbd",
+                  lineHeight: 1.6,
+                  marginBottom: "1.2rem",
+                }}
+              >
+                {project.tools}
+              </p>
 
-  <h4
-    style={{
-      color: "#f5f5f5",
-      fontSize: "1.2rem",
-      marginBottom: "0.5rem",
-      fontWeight: 500,
-    }}
-  >
-    Key Responsibilities:
-  </h4>
-  <p
-    style={{
-      color: "#bdbdbd",
-      lineHeight: 1.6,
-      marginBottom: "1.2rem",
-    }}
-  >
-    {project.responsibilities}
-  </p>
+              <h4
+                style={{
+                  color: "#f5f5f5",
+                  fontSize: "1.2rem",
+                  marginBottom: "0.5rem",
+                  fontWeight: 500,
+                }}
+              >
+                Key Responsibilities:
+              </h4>
+              <p
+                style={{
+                  color: "#bdbdbd",
+                  lineHeight: 1.6,
+                  marginBottom: "1.2rem",
+                }}
+              >
+                {project.responsibilities}
+              </p>
 
-  <h4
-    style={{
-      color: "#f5f5f5",
-      fontSize: "1.2rem",
-      marginBottom: "0.5rem",
-      fontWeight: 500,
-    }}
-  >
-    Purpose of This Project:
-  </h4>
-  <p
-    style={{
-      color: "#bdbdbd",
-      lineHeight: 1.6,
-    }}
-  >
-    {project.purpose}
-  </p>
-</div>
+              <h4
+                style={{
+                  color: "#f5f5f5",
+                  fontSize: "1.2rem",
+                  marginBottom: "0.5rem",
+                  fontWeight: 500,
+                }}
+              >
+                Purpose of This Project:
+              </h4>
+              <p
+                style={{
+                  color: "#bdbdbd",
+                  lineHeight: 1.6,
+                }}
+              >
+                {project.purpose}
+              </p>
+            </div>
 
           </div>
         ))}
       </div>
-      
+
 
       {/* Responsive & Hover Styles */}
       <style>

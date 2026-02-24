@@ -13,7 +13,7 @@ function Contact() {
     },
     {
       label: "GitHub",
-      href: "https://github.com/",
+      href: "#",
       icon: "https://img.icons8.com/nolan/64/github.png",
       sub: "Lok Prasanth",
     },
